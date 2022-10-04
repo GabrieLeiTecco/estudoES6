@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ECA Script</title>
+</head>
+
+<body>
+    
+</body>
+<script>
+    ///////////CLASSE NORMAL
+    /*essa eh a q ce ja sabe
+    serve normalmente pra coisas mais gerais
+    coisas que necessitam de mais de 1*/
+    class Notebook{
+        constructor(descricao, preco){
+            this.descricao = descricao
+            this.preco = preco
+        }
+
+        verDescricao(){
+            console.log(`O produto ${this.descricao} está disponivel pelo preço de ${this.preco} reais`)
+        }
+    }
+    let produto = new Notebook('Notebook', 2321)
+    produto.verDescricao()
+
+    ///////////OBJETO LITERAL
+    /*serve geralmente pra objetos mais insignificantes
+    que são temporários ou genéricos, unicos*/
+    let produtoLiteral = {
+        descricao: 'Geladeira',
+        preco: 2932,
+        verDescricao: function () {
+            console.log(`${this.descricao} está disponivel pelo preço de apenas ${this.preco} reais!`)
+        }
+    }
+
+    produtoLiteral.verDescricao()
+</script>
+
+</html>

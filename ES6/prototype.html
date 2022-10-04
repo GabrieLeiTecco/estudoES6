@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+    </div>
+</body>
+
+<script>
+    let animal = {
+        atrb1: 'a'
+    }
+
+    let vertebrado = {
+        __proto__: animal, //cria uma herança entre animal e vertebrado
+        atrb2: 'b'
+    }
+
+    let ave = {
+        __proto__:vertebrado,
+        atrb3: 'c',
+        atrb2: 'j' //o js sobrepõe o valor, caso aq ja tenha um atrb2 ele usa o desse, 
+        //se n tiver ele busca na herança
+    }
+</script>
+
+</html>

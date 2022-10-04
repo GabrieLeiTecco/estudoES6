@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+    </div>
+</body>
+
+<script>
+    ///////////A R R A Y
+    // let frutas = ['amanda', 'aline', 'giovana', 'leticia']
+
+    // //let [a, b, ,c] = frutas
+    // // existe o valor default que eh o q ta depois do =
+    // // ele eh desconsiderado caso exista um valor naquela posição do array, igual no c
+    // let [a, b, c = 'lalalal', d, e = 'Banana'] = frutas 
+    
+    // let coisas = [['amanda', 'aline', 'giovana', 'leticia'], ['bob', 'makalala', 'loucura loucura']]
+    // // pulei o primeiro array e o primeiro valor do segundo array
+    // // selecionando apenas o makalala
+    // let [, [, x]] = coisas 
+    
+    // console.log(a, b, c)
+
+    ///////////O B J E T O
+    let objeto = {
+        descricao: 'coisa',
+        preco: 'muito caro',
+        detalhes: {
+            tamanho: 'menor doq deveria',
+            ID: 29391238239129932183190812302193192939292938213128288837784821939283818392183821381289321883492938219083
+        }
+    }
+
+    //let {descricao, preco} = objeto
+    //let {descricao: d, preco: p = 1000} = objeto
+    let { detalhes: { tamanho: t, ID: id, fabricante: f = 'aLalala'}, preco: p} = objeto
+    
+    console.log(t, id, f)
+    
+</script>
+
+</html>

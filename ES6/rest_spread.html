@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+    </div>
+</body>
+
+<script>
+    // S P R E A D
+    // STRINGS
+    // let texto = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa bbb sexo sexo'
+    // console.log(texto)
+    // console.log(...texto)
+    // console.log([...texto])
+
+    // ARRAYS
+    // let jogos1 = ['GTA 1','GTA 2','GTA 3','GTA 4','GTA 5']
+    // let jogos2 = ['Halo 1','Halo 2','Halo 3','Halo 4']
+    // let todosJogos = [...jogos1, 'Minecraft', ...jogos2, 'Garrys mod']
+
+    // console.log(jogos1)
+    // console.log(jogos2)
+    // console.log(todosJogos)
+
+    // OBJETOS
+    // let pessoa = { nome: 'jorge', idade: 32, dinheiro: 1000000 }
+    // let clone = { id: 89283, ...pessoa }
+
+    // console.log(clone)
+
+    // R E S T
+    // transforma os parametros recebidos em um array com os valores
+    function soma(...param) {
+        let resultado
+
+        param.forEach(v => resultado += v)
+        
+        return resultado
+    }
+
+    function somaMult(m, ...p) {
+        let resultado
+
+        p.forEach(v => resultado += m * p)
+
+        return resultado
+    }
+
+    console.log(somaMult(5, 1, 2, 3, 4, 5))
+</script>
+
+</html>

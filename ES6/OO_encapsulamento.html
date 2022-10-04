@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ECA Script</title>
+</head>
+
+<body>
+    <button id="cadeira">clica</button> <br> <br>
+</body>
+<script>
+
+    ///////////PILAR ENCAPSULAMENTO
+    class Tv {
+        constructor() {
+            this._relacaoCanais = Array(2, 3, 5, 6, 7, 8)
+            this._canalAtivo = 5
+            this._volume = 10
+        }
+
+        get canalAtivo() {
+            return this._canalAtivo
+        }
+
+        set canalAtivo(canaL) {
+            this._canalAtivo = canal
+        }
+    }
+
+    let tv = new Tv()
+    console.log(tv.canalAtivo)
+
+</script>
+
+</html>

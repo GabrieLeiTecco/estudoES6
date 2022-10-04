@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+        <input type="button" onclick="carro.frear()" value="Frear">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="carro.acelerar()" value="Acelerar">
+        <br><br>
+        <input type="button" onclick="carro.driftar()" value="Meter o Drift King">
+    </div>
+</body>
+
+<script>
+    let Carro = function () {
+        this.cor = 'Amarelo'
+        this.modelo = 'Sedan'
+        this.velocidadeAtual = 0
+        var velocidadeMax = 120 //valores privados, que nao podem ser modificados pelo carro.blablabla()
+        var kmRodados = 0
+
+        this.frear = function () {
+            if (this.velocidadeAtual === 00) {
+                alert(`o carro ${this.cor} do modelo ${this.modelo} já está parado!`)
+            } else {
+                let velocidade = this.getVelocidadeAtual() - 10
+                this.setVelocidadeAtual(velocidade)
+                alert(`O carro desacelerou 10km/h e está à ${velocidade}km/h`)
+            }
+        }
+
+        this.acelerar = function () {
+            if (this.velocidadeAtual >= velocidadeMax) {
+                alert(`o carro ${this.cor} do modelo ${this.modelo} já está na velocidade máxima!`)
+                this.velocidadeAtual = velocidadeMax
+            } else {
+                let velocidade = this.getVelocidadeAtual() + 10
+                this.setVelocidadeAtual(velocidade)
+                setKmRodados(0.05)
+                alert(`O carro acelerou 10km/h e está à ${velocidade}km/h`)
+            }
+        }
+
+        this.driftar = function () {
+            if (this.velocidadeAtual >= 30) {
+                alert(`você mete um drift mto foda com um ${this.modelo} ${this.cor}, já poderia participar do Velozes e furiosos em tokyo`)
+                let perdaVelocidade = Math.floor(Math.random() * 30)
+                let kmsRodados = perdaVelocidade /2
+                let velocidade = this.getVelocidadeAtual() - perdaVelocidade
+                this.setVelocidadeAtual(velocidade)
+                setKmRodados(kmsRodados/100)
+                alert(`Mas você perdeu ${perdaVelocidade} de velocidade mandando a derrapagem, agora você está à ${this.velocidadeAtual}km/h`)
+            } else {
+                alert(`você tem q estar no minimo acima de 30km/h pra meter a driftzada, você está à ${this.velocidadeAtual}km/h`)
+            }
+        }
+
+        this.getVelocidadeAtual = function () {
+            return this.velocidadeAtual
+        }
+
+        this.setVelocidadeAtual = function (velocidadeAtual) {
+            this.velocidadeAtual = velocidadeAtual
+        }
+
+        var setKmRodados = function (kms) {
+            kmRodados += kms
+            console.log(kmRodados)
+        }
+    }
+
+    let carro = new Carro()
+</script>
+
+</html>

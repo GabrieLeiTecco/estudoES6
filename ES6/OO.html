@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ECA Script</title>
+</head>
+
+<body>
+    <button id="cadeira">clica</button> <br> <br>
+</body>
+<script>
+    ///////////PILAR ABSTRAÇÃO
+    class ContaBancaria {
+        constructor() {
+            this.agencia = 1574
+            this.numeroConta = 7547851
+            this.saldo = 258
+            this.limite = 300
+        }
+
+        depositar(valorDeposito) {
+            this.saldo += valorDeposito
+        }
+
+        sacar(valorSaque) {
+            this.saldo -= valorSaque
+        }
+
+        consultarSaldo() {
+            console.log(this.saldo)
+        }
+    }
+
+    let x = new ContaBancaria()
+    let y = new ContaBancaria()
+
+    // console.log(x.consultarSaldo())
+    x.consultarSaldo()
+    x.depositar(45)
+    x.consultarSaldo()
+    x.sacar(89)
+    x.consultarSaldo()
+
+    y.consultarSaldo()
+
+    ///////////PILAR ABSTRAÇÃO 2
+    class Cadeira {
+        constructor(qtd_pernas, giratoria, cor) {
+            this.qtd_pernas = qtd_pernas
+            this.giratoria = giratoria
+            this.cor = cor
+        }
+
+        girarCadeira() {
+            if (this.giratoria === true) {
+                console.log('girou')
+            } else {
+                console.log('Nao tem roda pra girar')
+            }
+        }
+    }
+
+
+    let cadeiras = Array()
+
+    document.getElementById('cadeira').onclick = function () {
+        let pernas = prompt('quantidade de pernas (em numeros pf)')
+        pernas = parseInt(pernas)
+        isNaN(pernas)
+        if (isNaN(pernas) === true) {
+            alert('isso n eh um numero vsf')
+            pernas = 1
+        }
+        let giras = prompt('ela gira? (sim ou nao)')
+        giras = giras.toLowerCase()
+        if (giras === 'sim' || giras === 's') {
+            giras = true
+        } else if (giras === 'nao' || giras === 'não' || giras === 'n') {
+            giras = false
+        } else {
+            alert(`vsf "${giras}" nao eh sim ou nao porra toma no cu`)
+            giras = true
+        }
+        let cores = prompt('qual a cor dela?')
+        cadeiras.push(new Cadeira(pernas, giras, cores))
+        console.log(cadeiras)
+    }
+</script>
+
+</html>

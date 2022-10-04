@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="nome" placeholder="nome!">
+        <input type="text" id="idade" placeholder="idade!">
+        <input type="text" id="sexo" placeholder="sexo!">
+        <input type="text" id="prof" placeholder="profissao!"> <br><br>
+        <button id="exibir1" onclick="exibir1()">Exibir1</button>
+        <button id="exibir2" onclick="exibir2()">Exibir2</button>
+    </div>
+</body>
+<script>
+
+    function exibir1() {
+        var nome = document.getElementById('nome').value
+        var idade = document.getElementById('idade').value
+        var sexo = document.getElementById('sexo').value
+        var prof = document.getElementById('prof').value
+        
+        var objeto1 = {
+            nome: nome,
+            idade: idade,
+            sexo: sexo,
+            prof: prof,
+            exibirDesc: function () {
+                console.log(`${this.nome}, ${this.idade} anos, sexo ${this.sexo} é ${this.prof}`)
+                console.log(objeto1)
+            }
+        }
+        objeto1.exibirDesc()
+    }
+
+
+    function exibir2() {
+        var nome = document.getElementById('nome').value
+        var idade = document.getElementById('idade').value
+        var sexo = document.getElementById('sexo').value
+        var prof = document.getElementById('prof').value
+
+        var objeto2 = {
+            // caso a variavel do obj tenha o msm nome
+            // do valor aplicado nela, da pra fazer isso aq
+            nome,
+            idade,
+            sexo,
+            prof,
+            exibirDesc() {
+                console.log(`${this.nome}, ${this.idade} anos, sexo ${this.sexo} é ${this.prof}`)
+                console.log(objeto2)
+            }
+        }
+        objeto2.exibirDesc()
+    }
+
+</script>
+
+</html>

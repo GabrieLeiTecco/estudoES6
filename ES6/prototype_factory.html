@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+        <input type="button" onclick="corBike('vermelha')" value="vermelho">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="corBike('amarela')" value="amarelo">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="corBike('verde')" value="verde">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="corBike('azul')" value="azul">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="corBike('rosa')" value="rosa">
+        <br><br>
+        <input type="button" onclick="marchaBike(1)" value="marcha unica">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="marchaBike(4)" value="4 marchas">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="marchaBike(8)" value="8 marchas">
+        <br> <br>
+        <input type="button" onclick="aroBike(12)" value="aro 12">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="aroBike(18)" value="aro 18">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="aroBike(26)" value="aro 26">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="aroBike(32)" value="aro 32">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="aroBike(40)" value="aro 40">
+        <hr>
+        <!------------------------------------------------------------------------------------------------>
+        <button onclick="adicionarBike()">Adicionar bicicleta</button>
+        &nbsp;&nbsp;&nbsp;
+        <button onclick="verBikes()">Ver bicicletas</button>
+        &nbsp;&nbsp;&nbsp;
+        <button onclick="pedalar()">Pedalar</button>
+    </div>
+</body>
+
+<script>
+    //ao inves de fazer assim:
+    // let bike1 = {
+    //     cor: 'branca',
+    //     marcha: 'unica',
+    //     aro: 12,
+    //     pedalar() { console.log(`pedalou`)}
+    // }
+
+    // let bike2 = {
+    //     cor: 'verde',
+    //     marcha: 'muitas',
+    //     aro: 16,
+    //     pedalar() { console.log(`pedalou`)}
+    // }
+
+    //fazer assim eh maiss melhor de bbom
+    let bikeFactory = function (cor, marcha, aro) {
+        return {
+            cor,
+            marcha,
+            aro,
+            pedalar() { console.log(`pedalou`) }
+        }
+    }
+    var cor = 'branca'
+    var marcha = 'unica'
+    var aro = 12
+    var bikes = []
+
+    function corBike(corBike) {
+        cor = corBike
+        console.log(`A bike agora é ${cor}`)
+        return cor
+    }
+
+    function marchaBike(marchaBike) {
+        marcha = marchaBike
+        console.log(`A qtde de marchas agora é ${marcha}`)
+        return marcha
+    }
+
+    function aroBike(aroBike) {
+        aro = aroBike
+        console.log(`O aro agora é aro ${aro}`)
+        return aro
+    }
+
+    function adicionarBike() {
+        bikes.push(bikeFactory(cor, marcha, aro))
+        console.log(`Adicionou a bike`)
+    }
+
+    function verBikes() {
+        console.clear()
+        console.log(bikes)
+    }
+
+    function pedalar() {
+        var numBike = Math.floor(Math.random() * bikes.length)
+        console.log(`Você pedalou com uma bicicleta ${bikes[numBike].cor}, com ${bikes[numBike].marcha} marcha e com aro ${bikes[numBike].aro}`)
+    }
+</script>
+
+</html>
